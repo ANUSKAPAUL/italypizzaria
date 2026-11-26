@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme {
+  --color-italian-red: #D9342B;
+  --color-italian-red-dark: #B82820;
+  --color-italian-green: #27834A;
+  --color-italian-green-dark: #1E683A;
+  --color-italian-cream: #F7F4EF;
+  --color-italian-cream-dark: #EDE7DD;
+  --color-italian-grey: #EAEAEA;
+  --color-italian-grey-light: #F5F5F5;
+  --color-italian-black: #111111;
+  --color-italian-black-soft: #252525;
+  --color-italian-black-muted: #555555;
+
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
+
+  --tracking-ultra-wide: 0.25em;
+  --tracking-super-wide: 0.35em;
+}
+
+:root {
+  --color-white: #FFFFFF;
+  --color-black: #111111;
+  --color-red: #D9342B;
+  --color-green: #27834A;
+  --color-cream: #F7F4EF;
+  --color-grey: #EAEAEA;
+}
+
+html {
+  background-color: #FFFFFF;
+  color: #111111;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom editorial typography */
+.font-editorial-serif {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.text-editorial-headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+/* Minimalist luxury button */
+.btn-luxury-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  background-color: #111111;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-luxury-primary:hover {
+  background-color: #D9342B;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(217, 52, 43, 0.3);
+}
+
+.btn-luxury-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 2.2rem;
+  background-color: transparent;
+  color: #111111;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 9999px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-luxury-secondary:hover {
+  border-color: #111111;
+  background-color: #111111;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Luxury card with subtle elevation */
+.card-luxury {
+  background: #FFFFFF;
+  border: 1px solid rgba(17, 17, 17, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-luxury:hover {
+  border-color: rgba(17, 17, 17, 0.15);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(12px) rotate(-1deg); }
+}
+
+.animate-float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EAEAEA;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CCCCCC;
+}
+
+/* Video container optimization */
+video {
+  display: block;
+}
+
+/* Accessibility: respect user prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
